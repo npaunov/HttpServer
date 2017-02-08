@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A36D0553-0FB4-459C-8875-EF5E2D8D6E37}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{65366447-1221-41E5-915B-CA191FC91860}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HttpServer</RootNamespace>
-    <AssemblyName>HttpServer</AssemblyName>
+    <RootNamespace>ServerStart</RootNamespace>
+    <AssemblyName>ServerStart</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,27 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\HeaderType.cs" />
-    <Compile Include="Enums\RequestMethod.cs" />
-    <Compile Include="Enums\ResponseStatusCode.cs" />
-    <Compile Include="HttpProcessor.cs" />
-    <Compile Include="HttpServer.cs" />
-    <Compile Include="Models\Cookie.cs" />
-    <Compile Include="Models\CookieCollection.cs" />
-    <Compile Include="Models\Header.cs" />
-    <Compile Include="Models\HttpRequest.cs" />
-    <Compile Include="Models\HttpResponse.cs" />
-    <Compile Include="Models\Route.cs" />
+    <Compile Include="ServerStart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="HttpResponseBuilder.cs" />
-    <Compile Include="StreamUtils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="RouteHandlers\" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Pages\404.html" />
-    <Content Include="Resources\Pages\500.html" />
+    <ProjectReference Include="..\HttpServer\HttpServer.csproj">
+      <Project>{a36d0553-0fb4-459c-8875-ef5e2d8d6e37}</Project>
+      <Name>HttpServer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
