@@ -1,14 +1,11 @@
 ﻿using HttpServer.Enums;
-using System.Text;
 
 namespace HttpServer.Models
 {
     public class HttpRequest
     {
-        public HttpRequest(RequestMethod method, string url)
+        public HttpRequest()
         {
-            this.Method = method;
-            this.Url = url;
             this.Header = new Header(HeaderType.HttpRequest);
         }
 
@@ -22,18 +19,11 @@ namespace HttpServer.Models
 
         public override string ToString()
         {
-            StringBuilder request = new StringBuilder();
-
-            request.AppendLine($"{this.Method} {this.Url} HTTP/1.0");
-            request.AppendLine(this.Header.ToString());
-
-            if (!string.IsNullOrEmpty(Content))
-            {
-                request.AppendLine();
-                request.AppendLine(Content);
-            }
-
-            return request.ToString();
+            return string.Format("{0} {1} HTTP/1.0\r\n{2}{3}",
+                this.Method,
+                this.Url,
+                this.Header,
+                this.Content);
         }
     }
 }

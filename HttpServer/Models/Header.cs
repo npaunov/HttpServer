@@ -24,6 +24,11 @@ namespace HttpServer.Models
 
         public CookieCollection Cookies { get; private set; }
 
+        public void AddCookie(Cookie cookie)
+        {
+            this.Cookies.Add(cookie);
+        }
+
         public override string ToString()
         {
             StringBuilder header = new StringBuilder();
