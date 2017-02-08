@@ -2,10 +2,6 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/ServerStart/obj/Debug
-/ServerStart/bin/Debug
-/HttpServer/obj/Debug
-/HttpServer/bin/Debug
 /.vs/HttpServer/v14
 /HttpServer/bin/Debug
 /HttpServer/obj/Debug

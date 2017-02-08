@@ -19,7 +19,7 @@ namespace HttpServer
 
         public static HttpResponse NotFound()
         {
-            string content = File.ReadAllText("Resources/Pages/404.html");
+            string content = File.ReadAllText(@"C:\Users\NPaunov\Downloads\Google Drive\Study\Web Basics\HttpServer\HttpServer\Resources\Pages\404.html");
 
             return new HttpResponse()
             {
