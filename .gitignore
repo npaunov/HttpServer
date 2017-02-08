@@ -3,3 +3,7 @@
 ################################################################################
 
 /ServerStart/obj/Debug
+/ServerStart/bin/Debug
+/HttpServer/obj/Debug
+/HttpServer/bin/Debug
+/.vs/HttpServer/v14
