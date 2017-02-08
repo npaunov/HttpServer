@@ -17,20 +17,15 @@ namespace HttpServer.Models
 
         public int Count { get { return this.Cookies.Count; } }
 
-        public Cookie this[string key]
+        public Cookie this[string cookieName]
         {
             get
             {
-                return this.Cookies[key];
+                return this.Cookies[cookieName];
             }
             set
             {
-                if (this.Cookies.ContainsKey(key))
-                {
-                    this.Cookies[key] = value;
-                    return;
-                }
-                this.Cookies.Add(key, value);
+               this.Add(value);
             }
         }
 
